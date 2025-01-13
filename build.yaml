@@ -19,6 +19,6 @@
 #
 ---
 include:
-  - board: bt60_v1
-include:
-  - board: bt60_v1
+  - board: bt60_v1    
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    artifact-name: bt60_v1
