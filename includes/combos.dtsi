@@ -1,0 +1,14 @@
+    / {
+
+    
+        combos {
+            combo_dvorak {
+                bindings = <&tog DVORAK>; // Dvorak Layer
+                key-positions = <K56 K64>;
+            };
+        };
+
+        
+
+
+    };

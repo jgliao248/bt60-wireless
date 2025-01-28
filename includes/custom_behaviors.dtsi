@@ -1,0 +1,24 @@
+#define LAYERS_QUICK_TAP_MS 280
+#define LAYERS_TAP_TERM_MS 175
+#define LAYERS_PRIOR_IDLE_MS 150
+#define CAPS_TAP_DURATION 150
+
+ZMK_MACRO(CODE_BLCK,
+    bindings = <
+                &kp GRAVE &kp GRAVE &kp GRAVE &kp LS(RET)
+                &kp GRAVE &kp GRAVE &kp GRAVE &kp UP
+            >;
+)
+
+ZMK_TAP_DANCE(QUOTES,
+    tapping-term-ms = <200>;
+    bindings = <&kp SQT>, <&kp GRAVE>, <&CODE_BLCK>;
+)
+
+/ {
+
+    behaviors {
+
+        
+	};
+};
