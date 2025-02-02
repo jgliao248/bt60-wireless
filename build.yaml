@@ -19,7 +19,7 @@
 #
 ---
 include:
-  - board: bt60_v
+  - board: bt60_v1
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: bt60
