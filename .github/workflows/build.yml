@@ -50,7 +50,7 @@ jobs:
         run: cp build/zephyr/zmk.uf2 bt60.uf2
 
       - name: Upload Firmware Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: bt60.uf2
