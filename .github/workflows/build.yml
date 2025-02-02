@@ -1,57 +1,6 @@
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
-
-name: Build Firmware
+name: Build ZMK firmware
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: zmkfirmware/zmk-build-arm:stable
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Cache West Modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ hashFiles('manifest-dir/west.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-
-      - name: West Init
-        run: west init -l config
-
-      - name: West Update
-        run: west update
-
-      - name: West Zephyr Export
-        run: west zephyr-export
-
-      - name: Build Firmware (bt60)
-        run: west build -s zmk/app -b bt60 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-
-      - name: Show bt60 Kconfig File
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-
-      - name: Rename Firmware File
-        run: cp build/zephyr/zmk.uf2 bt60.uf2
-
-      - name: Upload Firmware Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: firmware
-          path: bt60.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
