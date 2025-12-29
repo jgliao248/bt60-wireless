@@ -10,14 +10,14 @@
 #define DVORAK 1
 #define FUNCTION 2
 
-// #include "includes/settings.dtsi"
+#include "../includes/settings.dtsi"
 // #include "includes/conditional_layers.dtsi"
-// #include "includes/macros.dtsi"
+#include "../includes/macros.dtsi"
 
 // #include "includes/behaviors_homerow_mods.dtsi"
 
-// #include "includes/custom_behaviors.dtsi"
-//#include "../includes/combos.dtsi"
+#include "../includes/custom_behaviors.dtsi"
+#include "../includes/combos.dtsi"
 
 / {
 	keymap {
@@ -34,7 +34,7 @@
 			bindings = <
 				&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp  N8   &kp  N9 &kp  N0  &kp MINUS &kp EQUAL &kp BSPC &kp C_MUTE
 				&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp  I    &kp  O  &kp  P   &kp LBKT &kp RBKT  &kp BSLH
-				&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           &kp RET
+				&caps_word  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp  K    &kp  L  &kp SEMI &kp SQT           &kp RET
 				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH    &kp RSHFT &kp UP   &kp ESC
 				&kp LCTRL &kp LEFT_GUI &kp LALT            &kp SPACE                          &kp RALT  &mo FUNCTION &kp LEFT &kp DOWN &kp RIGHT  
 			>;
