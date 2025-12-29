@@ -7,7 +7,7 @@
 		/* Force ZMK to use OUR kscan + transform */
 		zmk,kscan = &kscan0;
 		zmk,matrix-transform = &bt60_transform;
-		zmk,physical-layout = &physical_layout_0
+		// zmk,physical-layout = &physical_layout_0
 	};
 
 	/* --------- Matrix scanner (GPIO matrix) ---------
