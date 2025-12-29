@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-	model = "bt60@1.0.0";
+	model = "bt60";
 	compatible = "bt60";
 
 	chosen {
