@@ -20,39 +20,39 @@
 	 * If you aren't sure what node name to use, tell me what MCU/module this BT60 uses
 	 * (nice!nano v2, nRF52840, etc.) and I'll tailor it.
 	 */
-	kscan0: kscan0 {
-		compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
-		/* Set this to match your PCB diode direction */
-		diode-direction = "col2row";
-		wakeup-source;
+	// kscan0: kscan0 {
+	// 	compatible = "zmk,kscan-gpio-matrix";
+    //     label = "KSCAN";
+	// 	/* Set this to match your PCB diode direction */
+	// 	diode-direction = "col2row";
+	// 	wakeup-source;
 
-		col-gpios
-			= <&gpio1 13 GPIO_ACTIVE_HIGH>
-			, <&gpio1 10 GPIO_ACTIVE_HIGH>
-			, <&gpio1 11 GPIO_ACTIVE_HIGH>
-			, <&gpio1 15 GPIO_ACTIVE_HIGH>
-			, <&gpio0 3 GPIO_ACTIVE_HIGH>
-			, <&gpio0 2 GPIO_ACTIVE_HIGH>
-			, <&gpio0 28 GPIO_ACTIVE_HIGH>
-			, <&gpio0 29 GPIO_ACTIVE_HIGH>
-			, <&gpio0 30 GPIO_ACTIVE_HIGH>
-			, <&gpio0 31 GPIO_ACTIVE_HIGH>
-			, <&gpio0 5 GPIO_ACTIVE_HIGH>
-			, <&gpio0 7 GPIO_ACTIVE_HIGH>
-			, <&gpio1 9 GPIO_ACTIVE_HIGH>
-			, <&gpio0 12 GPIO_ACTIVE_HIGH>
-      , <&gpio0 23 GPIO_ACTIVE_HIGH>
-			;
+	// 	col-gpios
+	// 		= <&gpio1 13 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio1 10 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio1 11 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio1 15 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 3 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 2 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 28 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 29 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 30 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 31 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 5 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 7 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio1 9 GPIO_ACTIVE_HIGH>
+	// 		, <&gpio0 12 GPIO_ACTIVE_HIGH>
+    //   , <&gpio0 23 GPIO_ACTIVE_HIGH>
+	// 		;
 
-		row-gpios
-			= <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			, <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-			;
-	};
+	// 	row-gpios
+	// 		= <&gpio1 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+	// 		, <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+	// 		, <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+	// 		, <&gpio0 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+	// 		, <&gpio1 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+	// 		;
+	// };
 
 	/* --------- Matrix transform ---------
 	 * This maps keymap positions -> physical matrix RC(row,col).
