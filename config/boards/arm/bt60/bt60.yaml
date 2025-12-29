@@ -1,4 +1,4 @@
-identifier: bt60_v1
+identifier: bt60@1.0.0
 name: bt60
 type: mcu
 arch: arm
