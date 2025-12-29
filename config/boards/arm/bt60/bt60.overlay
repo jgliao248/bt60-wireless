@@ -7,6 +7,7 @@
 		/* Force ZMK to use OUR kscan + transform */
 		zmk,kscan = &kscan0;
 		zmk,matrix-transform = &bt60_transform;
+		zmk,physical-layout = &physical_layout_0
 	};
 
 	/* --------- Matrix scanner (GPIO matrix) ---------
@@ -81,8 +82,8 @@
 		compatible = "zephyr,ec11";
 		label = "ENCODER_0";
 
-		a-gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-		b-gpios = <&gpio0 21 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        a-gpios = <&gpio1 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 
 		/* optional: steps-per-period = <2>; */
 		status = "okay";
