@@ -28,22 +28,22 @@
         >;
     };
 
-    /* -----------------------------------------------------------------
-     * Rotary encoder (EC11)
-     * ----------------------------------------------------------------- */
-    encoder0: encoder0 {
-        compatible = "zephyr,ec11";
-        label = "ENCODER_0";
+    // /* -----------------------------------------------------------------
+    //  * Rotary encoder (EC11)
+    //  * ----------------------------------------------------------------- */
+    // encoder0: encoder0 {
+    //     compatible = "zephyr,ec11";
+    //     label = "ENCODER_0";
 
-        /* NOTE:
-         * Most EC11 encoders are ACTIVE_LOW with pull-ups.
-         * If yours is wired differently, we can flip these.
-         */
-        a-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        b-gpios = <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    //     /* NOTE:
+    //      * Most EC11 encoders are ACTIVE_LOW with pull-ups.
+    //      * If yours is wired differently, we can flip these.
+    //      */
+    //     a-gpios = <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    //     b-gpios = <&gpio1 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        status = "okay";
-    };
+    //     status = "okay";
+    // };
 
 	
 };
