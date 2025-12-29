@@ -39,6 +39,9 @@ jobs:
       - name: Show bt60 Kconfig File
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
 
+      - name: Show bt60 device tree File
+        run: cat build/zephyr/include/generated/zephyr/devicetree_generated.h | grep -v "^#" | grep -v "^$"
+
       - name: Rename Firmware File
         run: cp build/zephyr/zmk.uf2 bt60.uf2
 
