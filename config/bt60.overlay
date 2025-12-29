@@ -1,14 +1,20 @@
 /* bt60.overlay - custom 5x15 matrix + custom matrix transform + optional encoder */
 
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "bt60-layouts.dtsi"
 
 / {
-	chosen {
-		/* Force ZMK to use OUR kscan + transform */
-		zmk,kscan = &kscan0;
-		zmk,matrix-transform = &bt60_transform;
-		// zmk,physical-layout = &physical_layout_0
-	};
+	// chosen {
+	// 	/* Force ZMK to use OUR kscan + transform */
+	// 	zmk,kscan = &kscan0;
+	// 	zmk,matrix-transform = &bt60_transform;
+	// 	// zmk,physical-layout = &physical_layout_0
+	// };
+
+	&physical_layout0 {
+    kscan = <&kscan0>; // Label of the kscan node this layout uses
+    transform = <&bt60_transform>; // Label of the matrix transform this layout uses
+};
 
 	/* --------- Matrix scanner (GPIO matrix) ---------
 	 * Replace the pin controller node (&... ) and pin numbers with your actual hardware.
