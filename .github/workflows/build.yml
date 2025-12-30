@@ -34,7 +34,7 @@ jobs:
         run: west zephyr-export
 
       - name: Build Firmware (bt60)
-        run: west build -s zmk/app -b bt60@1.0.0 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b bt60@1.0.0 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSNIPPET=studio-rpc-usb-uart
 
       - name: Show bt60 Kconfig File
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
