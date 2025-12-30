@@ -10,9 +10,9 @@
 	// 	zmk,physical-layout = &physical_layout0;
 	// };
 
-	&{/chosen} {
+	chosen {
   zmk,matrix-transform = &bt60_transform;
-  zmk,physical-layout = &bt60_custom_layout;
+  zmk,physical-layout = &custom;
 };
 
 
