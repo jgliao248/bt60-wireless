@@ -10,6 +10,12 @@
 	// 	zmk,physical-layout = &physical_layout0;
 	// };
 
+	&{/chosen} {
+  zmk,matrix-transform = &bt60_transform;
+  zmk,physical-layout = &bt60_custom_layout;
+};
+
+
     /* -----------------------------------------------------------------
      * Matrix transform
      * Maps keymap positions -> physical matrix RC(row,col)
