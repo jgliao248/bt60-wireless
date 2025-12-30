@@ -1,52 +1,59 @@
 name: Build ZMK firmware
 on: [push, pull_request, workflow_dispatch]
 
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     container:
+#       image: zmkfirmware/zmk-build-arm:stable
+
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v3
+
+#       - name: Cache West Modules
+#         uses: actions/cache@v3
+#         with:
+#           path: |
+#             modules/
+#             tools/
+#             zephyr/
+#             bootloader/
+#             zmk/
+#           key: ${{ runner.os }}-build-${{ hashFiles('manifest-dir/west.yml') }}
+#           restore-keys: |
+#             ${{ runner.os }}-build-
+
+#       - name: West Init
+#         run: west init -l config
+
+#       - name: West Update
+#         run: west update
+
+#       - name: West Zephyr Export
+#         run: west zephyr-export
+
+#       - name: Build Firmware (bt60)
+#         uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+#         with:
+#           config_path: config
+#         # old manual run
+#         # run: west build -s zmk/app -b bt60@1.0.0 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSNIPPET=studio-rpc-usb-uart
+
+#       - name: Show bt60 Kconfig File
+#         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
+
+#       - name: Show bt60 device tree File
+#         run: cat build/zephyr/include/generated/zephyr/devicetree_generated.h | grep -v "^#" | grep -v "^$"
+
+#       - name: Rename Firmware File
+#         run: cp build/zephyr/zmk.uf2 bt60.uf2
+
+#       - name: Upload Firmware Artifact
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: firmware
+#           path: bt60.uf2
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: zmkfirmware/zmk-build-arm:stable
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Cache West Modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-            zmk/
-          key: ${{ runner.os }}-build-${{ hashFiles('manifest-dir/west.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-
-      - name: West Init
-        run: west init -l config
-
-      - name: West Update
-        run: west update
-
-      - name: West Zephyr Export
-        run: west zephyr-export
-
-      - name: Build Firmware (bt60)
-        run: west build -s zmk/app -b bt60@1.0.0 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config" -DSNIPPET=studio-rpc-usb-uart
-
-      - name: Show bt60 Kconfig File
-        run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
-
-      - name: Show bt60 device tree File
-        run: cat build/zephyr/include/generated/zephyr/devicetree_generated.h | grep -v "^#" | grep -v "^$"
-
-      - name: Rename Firmware File
-        run: cp build/zephyr/zmk.uf2 bt60.uf2
-
-      - name: Upload Firmware Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: firmware
-          path: bt60.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
