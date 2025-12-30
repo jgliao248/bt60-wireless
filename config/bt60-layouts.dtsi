@@ -1,9 +1,9 @@
 #include <physical_layouts.dtsi>
 
 / {
-    physical_layout0: physical_layout_0 {
+    custom: custom {
         compatible = "zmk,physical-layout";
-        display-name = "BT60-SplitBackspace";
+        display-name = "custom";
 
         kscan = <&kscan0>;
         transform = <&bt60_transform>;
