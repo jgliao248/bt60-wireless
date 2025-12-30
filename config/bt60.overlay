@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 // #include "bt60-layouts.dtsi"
 
- &bt60_custom_layout: bt60_custom_layout {
+ &bt60_custom_layout {
         compatible = "zmk,physical-layout";
         display-name = "BT60-custom";
 
