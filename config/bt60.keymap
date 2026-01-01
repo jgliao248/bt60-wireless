@@ -34,7 +34,7 @@
 				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH    &kp RSHFT &kp UP   &kp ESC
 				&kp LCTRL &kp LEFT_GUI &kp LALT            &kp SPACE                          &kp RALT  &mo FUNCTION &kp LEFT &kp DOWN &kp RIGHT  
 			>;
-			sensor-bindings = <&kp LS(LCTL(LALT(DOWN))) &kp LS(LCTL(LALT(UP)))>;
+			sensor-bindings = <&inc_dec_kp LS(LCTL(LALT(DOWN))) LS(LCTL(LALT(UP)))>;
 		};
 
         dvorak_layer {
@@ -45,7 +45,7 @@
 				&kp LSHFT  &kp SEMI  &kp Q  &kp J  &kp K  &kp X  &kp B  &kp M  &kp W &kp V &kp Z    &kp RSHFT &kp UP   &kp ESC
 				&kp LCTRL &kp LEFT_GUI &kp LALT            &kp SPACE                          &kp RALT  &mo FUNCTION &kp LEFT &kp DOWN &kp RIGHT  
 			>;
-			sensor-bindings = <&kp LS(LCTL(LALT(DOWN))) &kp LS(LCTL(LALT(UP)))>;
+			sensor-bindings = <&inc_dec_kp LS(LCTL(LALT(DOWN))) LS(LCTL(LALT(UP)))>;
 		};
 
 		function {
@@ -56,7 +56,7 @@
 				&kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &trans &trans &trans &trans &trans &trans &trans &kp END &kp PG_DN  &kp C_NEXT
 				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans  &trans &trans   &trans &bt BT_CLR
 			>;
-			sensor-bindings = <&kp LS(LCTL(LALT(DOWN))) &kp LS(LCTL(LALT(UP)))>;
+			sensor-bindings = <&inc_dec_kp LS(LCTL(LALT(DOWN))) LS(LCTL(LALT(UP)))>;
 		};
 
 		extra1 {
